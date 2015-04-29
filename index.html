@@ -13,20 +13,17 @@
 <body>
   <div class="container" ng-controller="GameCtrl">
     <button class="btn btn-danger" ng-click="start()">START</button>
+    <span ng-show="fail">PATTERN FAIL, click start to reset</span>
     <div class="row">
       <div class="col-sm-6 game-btn" id="{{btn1}}" ng-click="click('btn1')">
-        b1
       </div>
       <div class="col-sm-6 game-btn" id="{{btn2}}" ng-click="click('btn2')">
-        b2
       </div>
     </div>
     <div class="row">
       <div class="col-sm-6 game-btn" id="{{btn3}}" ng-click="click('btn3')">
-        b3
       </div>
       <div class="col-sm-6 game-btn" id="{{btn4}}" ng-click="click('btn4')">
-        b4
       </div>
     </div>
   </div>
