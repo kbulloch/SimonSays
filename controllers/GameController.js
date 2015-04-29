@@ -1,4 +1,9 @@
-simon.controller("GameCtrl", function($scope) {
+simon.controller("GameCtrl", function($scope, $timeout) {
+
+  $scope.btn1 = "btn1";
+  $scope.btn2 = "btn2";
+  $scope.btn3 = "btn3";
+  $scope.btn4 = "btn4";
 
   var user_pattern = [];
   var simon_pattern = ["btn1", "btn2"];
@@ -33,6 +38,14 @@ simon.controller("GameCtrl", function($scope) {
     var btns = ["btn1", "btn2", "btn3", "btn4"];
     simon_pattern.push(btns[Math.floor(Math.random() * btns.length)]);
     console.log("simon: " + simon_pattern);
+    for (var i in simon_pattern) {
+      $scope[simon_pattern[i]] = simon_pattern[i] + "b";
+      $timeout(function() {
+        console.log(simon_pattern[i].substring(0, simon_pattern[i].length));
+        $scope[simon_pattern[i]] = simon_pattern[i].substring(0, simon_pattern[i].length);
+      }, 1000);
+    }
+
   }
 
 });

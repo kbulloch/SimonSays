@@ -15,17 +15,33 @@ html, body {
 }
 
 #btn1 {
-  background: red;
+  background: #850000;
 }
 
 #btn2 {
-  background: blue;
+  background: #004985;
 }
 
 #btn3 {
-  background: yellow;
+  background: #7A8500;
 }
 
 #btn4 {
-  background: green;
+  background: #056E00;
+}
+
+#btn1b {
+  background: red;
+}
+
+#btn2b {
+  background: #00D5FF;
+}
+
+#btn3b {
+  background: yellow;
+}
+
+#btn4b {
+  background: #00FF26;
 }
