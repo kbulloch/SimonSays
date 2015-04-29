@@ -7,12 +7,16 @@ simon.controller("GameCtrl", function($scope, $timeout) {
 
   var user_pattern = [];
   var simon_pattern = [];
-
+  $scope.fail = false;
+  $scope.score = 0;
 
   $scope.start = function() {
+    user_pattern = [];
+    simon_pattern = [];
+    $scope.fail = false;
+    $scope.score = 0;
     addSimon();
     flashSimon();
-    $scope.fail = false;
   }
 
   $scope.click = function(btn) {
@@ -36,6 +40,7 @@ simon.controller("GameCtrl", function($scope, $timeout) {
 
       } else {
         if (i == user_pattern.length - 1) {
+          $scope.score++;
           user_pattern = [];
           addSimon();
           flashSimon();
@@ -49,8 +54,6 @@ simon.controller("GameCtrl", function($scope, $timeout) {
     simon_pattern.push(btns[Math.floor(Math.random() * btns.length)]);
     console.log("simon: " + simon_pattern);
   }
-
-
 
   function  flashSimon() {
     for (var i in simon_pattern) {
@@ -70,6 +73,5 @@ simon.controller("GameCtrl", function($scope, $timeout) {
       })(i);
     }
   }
-
 
 });

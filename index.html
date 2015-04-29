@@ -14,6 +14,7 @@
   <div class="container" ng-controller="GameCtrl">
     <button class="btn btn-danger" ng-click="start()">START</button>
     <span ng-show="fail">PATTERN FAIL, click start to reset</span>
+    <h3>{{score}} rounds won</h3>
     <div class="row">
       <div class="col-sm-6 game-btn" id="{{btn1}}" ng-click="click('btn1')">
       </div>
