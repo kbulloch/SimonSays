@@ -1,18 +1,29 @@
 html, body {
-  background: grey;
+  color: white;
+  background: #404040;
+}
+
+h3 {
+  display: inline;
+  margin-right: 10px;
+}
+
+#failtext {
+  color: red;
 }
 
 .container {
-  background: grey;
+  background: #404040;
   margin: 30px;
 }
 
 .game-btn {
-  height: 300px;
-  width: 300px;
-  border: 2px solid grey;
-  border-radius: 10px;
+  height: 250px;
+  width: 250px;
+  border: 2px solid #404040;
+  border-radius: 1000px;
 }
+
 
 #btn1 {
   background: #850000;
