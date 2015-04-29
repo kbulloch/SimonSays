@@ -24,6 +24,9 @@ h3 {
   border-radius: 1000px;
 }
 
+.game-btn:active {
+  border: 2px solid white;
+}
 
 #btn1 {
   background: #850000;
