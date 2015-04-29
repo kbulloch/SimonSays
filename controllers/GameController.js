@@ -6,7 +6,7 @@ simon.controller("GameCtrl", function($scope, $timeout) {
   $scope.btn4 = "btn4";
 
   var user_pattern = [];
-  var simon_pattern = ["btn1", "btn2"];
+  var simon_pattern = ["btn1", "btn2", "btn4"];
 
   $scope.click = function(btn) {
     user_pattern.push(btn);
@@ -38,14 +38,61 @@ simon.controller("GameCtrl", function($scope, $timeout) {
     var btns = ["btn1", "btn2", "btn3", "btn4"];
     simon_pattern.push(btns[Math.floor(Math.random() * btns.length)]);
     console.log("simon: " + simon_pattern);
+
     for (var i in simon_pattern) {
-      $scope[simon_pattern[i]] = simon_pattern[i] + "b";
-      $timeout(function() {
-        console.log(simon_pattern[i].substring(0, simon_pattern[i].length));
-        $scope[simon_pattern[i]] = simon_pattern[i].substring(0, simon_pattern[i].length);
-      }, 1000);
+      (function(i) {
+        $timeout(function() {
+          console.log("now on " + simon_pattern[i]);
+          $scope[simon_pattern[i]] = simon_pattern[i] + "b";
+          console.log("transformed to " + $scope[simon_pattern[i]]);
+        }, 1000 * i);
+      })(i);
     }
 
+    for (var i in simon_pattern) {
+      (function(i) {
+        $timeout(function() {
+          $scope[simon_pattern[i]] = simon_pattern[i];
+          console.log("turned back to " + $scope[simon_pattern[i]]);
+        }, 1000 * i * 2);
+      })(i);
+    }
+
+
+
+
+    // for (var i in simon_pattern) {
+    //   console.log("now on " + simon_pattern[i]);
+    //   $scope[simon_pattern[i]] = simon_pattern[i] + "b";
+    //   console.log("transformed to " + $scope[simon_pattern[i]]);
+    //   (function(i) {
+    //     $timeout(function() {
+    //       $scope[simon_pattern[i]] = simon_pattern[i];
+    //       console.log("turned back to " + $scope[simon_pattern[i]]);
+    //     }, 1000 * i);
+    //   })(i);
+    //
+    // }
   }
+
+
+  // function addSimon() {
+  //   var btns = ["btn1", "btn2", "btn3", "btn4"];
+  //   simon_pattern.push(btns[Math.floor(Math.random() * btns.length)]);
+  //   console.log("simon: " + simon_pattern);
+  //
+  //   var sequence = simon_pattern;
+  //   for (var i in simon_pattern) {
+  //     console.log("now on " + simon_pattern[i]);
+  //     $scope[simon_pattern[i]] = simon_pattern[i] + "b";
+  //     console.log("transformed to " + $scope[simon_pattern[i]]);
+  //
+  //     $timeout(function() {
+  //       $scope[sequence[0]] = sequence[0];
+  //       console.log("turned back to " + $scope[sequence[0]]);
+  //       sequence.shift();
+  //     }, 1000);
+  //   }
+  // }
 
 });
