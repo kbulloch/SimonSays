@@ -37,16 +37,13 @@ simon.controller("GameCtrl", function($scope, $timeout) {
           $scope.fail = true;
           $scope.starting = true;
         }
-
-      } else {
-        if (i == user_pattern.length - 1) {
-          $scope.score++;
-          user_pattern = [];
-          addSimon();
-          deactivateBtns();
-          flashSimon();
-          activateBtns();
-        }
+      } else if (i == user_pattern.length - 1) {
+        $scope.score++;
+        user_pattern = [];
+        addSimon();
+        deactivateBtns();
+        flashSimon();
+        activateBtns();
       }
     }
   }
