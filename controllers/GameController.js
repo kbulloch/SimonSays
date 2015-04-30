@@ -13,6 +13,7 @@ simon.controller("GameCtrl", function($scope, $timeout) {
   $scope.active = true;
   $scope.btnActive = "btn-active";
 
+
   $scope.start = function() {
     user_pattern = [];
     simon_pattern = [];
@@ -59,7 +60,7 @@ simon.controller("GameCtrl", function($scope, $timeout) {
       $timeout(function() {
         $scope.active = true;
         $scope.btnActive = "btn-active";
-      }, 700 * (simon_pattern.length + 1));
+      }, $scope.speed * 100 * (simon_pattern.length + 1));
     })();
   }
 
@@ -75,22 +76,16 @@ simon.controller("GameCtrl", function($scope, $timeout) {
           (function(i) {
             $timeout(function() {
               $scope[simon_pattern[i]] = simon_pattern[i] + "b";
-            }, 700 * i);
+            }, $scope.speed * 100 * i);
           })(i);
 
           (function(i) {
             $timeout(function() {
               $scope[simon_pattern[i]] = simon_pattern[i];
-            }, 70 * (i + 5));
-          })(i);
-
-          (function(i) {
-            $timeout(function() {
-              //
-            }, 7 * (i + 10));
+            }, $scope.speed * 10 * (i + 5));
           })(i);
         }
-      }, 700);
+      }, $scope.speed * 100);
     })();
   }
 

@@ -14,8 +14,15 @@
   <div class="container" ng-controller="GameCtrl">
     <div class="game-box">
 
-      <div id="scorebox">
-        <h3 id="score">{{score}} rounds won</h3>
+      <div class="row">
+        <div class="col-sm-6" ng-init="speed = 7">
+          <input ng-model="speed" type="radio" value=7> Slow
+          <input ng-model="speed" type="radio" value=4> Fast
+          <input ng-model="speed" type="radio" value=2> Expert
+        </div>
+        <div class="col-sm-6" id="scorebox">
+          <h3 id="score">{{score}} rounds won</h3>
+        </div>
       </div>
 
       <div id="failbox">
