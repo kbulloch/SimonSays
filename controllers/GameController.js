@@ -59,22 +59,26 @@ simon.controller("GameCtrl", function($scope, $timeout) {
   }
 
   function  flashSimon() {
-    for (var i in simon_pattern) {
-      (function(i) {
-        $timeout(function() {
-          console.log("now on " + simon_pattern[i]);
-          $scope[simon_pattern[i]] = simon_pattern[i] + "b";
-          console.log("transformed to " + $scope[simon_pattern[i]]);
-        }, 700 * i);
-      })(i);
+    (function() {
+      $timeout(function() {
+        for (var i in simon_pattern) {
+          (function(i) {
+            $timeout(function() {
+              console.log("now on " + simon_pattern[i]);
+              $scope[simon_pattern[i]] = simon_pattern[i] + "b";
+              console.log("transformed to " + $scope[simon_pattern[i]]);
+            }, 700 * i);
+          })(i);
 
-      (function(i) {
-        $timeout(function() {
-          $scope[simon_pattern[i]] = simon_pattern[i];
-          console.log("turned back to " + $scope[simon_pattern[i]]);
-        }, 70 * (i + 5));
-      })(i);
-    }
+          (function(i) {
+            $timeout(function() {
+              $scope[simon_pattern[i]] = simon_pattern[i];
+              console.log("turned back to " + $scope[simon_pattern[i]]);
+            }, 70 * (i + 5));
+          })(i);
+        }
+      }, 700);
+    })();
   }
 
 });
