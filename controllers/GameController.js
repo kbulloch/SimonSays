@@ -10,6 +10,8 @@ simon.controller("GameCtrl", function($scope, $timeout) {
   $scope.fail = false;
   $scope.score = 0;
   $scope.starting = true;
+  $scope.active = true;
+  $scope.btnActive = "btn-active";
 
   $scope.start = function() {
     user_pattern = [];
@@ -41,10 +43,27 @@ simon.controller("GameCtrl", function($scope, $timeout) {
           $scope.score++;
           user_pattern = [];
           addSimon();
+          deactivateBtns();
           flashSimon();
+          activateBtns();
         }
       }
     }
+  }
+
+  function deactivateBtns() {
+    $scope.active = false;
+    // can add deactive button click css (xxx) later
+    $scope.btnActive = "xxx";
+  }
+
+  function activateBtns() {
+    (function() {
+      $timeout(function() {
+        $scope.active = true;
+        $scope.btnActive = "btn-active";
+      }, 700 * (simon_pattern.length + 1));
+    })();
   }
 
   function addSimon() {
@@ -70,6 +89,7 @@ simon.controller("GameCtrl", function($scope, $timeout) {
 
           (function(i) {
             $timeout(function() {
+              //
             }, 7 * (i + 10));
           })(i);
         }

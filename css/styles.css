@@ -55,7 +55,7 @@ h3 {
   margin: 10px;
 }
 
-.game-btn:active {
+.btn-active:active {
   border: 4px solid white;
 }
 
