@@ -65,14 +65,14 @@ simon.controller("GameCtrl", function($scope, $timeout) {
           console.log("now on " + simon_pattern[i]);
           $scope[simon_pattern[i]] = simon_pattern[i] + "b";
           console.log("transformed to " + $scope[simon_pattern[i]]);
-        }, 1000 * i);
+        }, 700 * i);
       })(i);
 
       (function(i) {
         $timeout(function() {
           $scope[simon_pattern[i]] = simon_pattern[i];
           console.log("turned back to " + $scope[simon_pattern[i]]);
-        }, 100 * (i + 5));
+        }, 70 * (i + 5));
       })(i);
     }
   }

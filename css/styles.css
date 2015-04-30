@@ -8,24 +8,32 @@ h3 {
   margin-right: 10px;
 }
 
-#failtext {
-  color: red;
+.container {
+  background: #404040;
 }
 
-#score {
+#scorebox {
+  text-align: right;
+  height: 60px;
+  width: 500px;
   position: relative;
   right: 0;
   text-algin: right;
 }
 
-.container {
-  background: #404040;
+#failbox {
+  color: red;
+  position: fixed;
+  margin-left: 100px;
+  z-index: 2;
+  width: 300px;
+  text-align: center;
+  margin-top: 10%;
 }
 
-.title {
-  text-align: right;
-  height: 60px;
-  width: 500px;
+#failtext {
+  font-size: 40px;
+
 }
 
 .game-box {
@@ -40,14 +48,15 @@ h3 {
 }
 
 .game-btn {
-  height: 250px;
-  width: 250px;
-  border: 2px solid #404040;
+  height: 230px;
+  width: 230px;
   border-radius: 1000px;
+  box-shadow: 0 0 20px black;
+  margin: 10px;
 }
 
 .game-btn:active {
-  border: 2px solid white;
+  border: 4px solid white;
 }
 
 .btn-start {
@@ -57,7 +66,12 @@ h3 {
   height: 500px;
   border-radius: 125px;
   background: rgba(0,0,0,0.5);
-  z-index: 10;
+  z-index: 1;
+}
+
+.btn-start:hover {
+  color: white;
+  text-shadow: 0 0 10px cyan;
 }
 
 #btn1 {
