@@ -32,15 +32,15 @@
 
       <button class="btn btn-start" ng-show="starting" ng-click="start()">START</button>
       <div class="row">
-        <div class="col-sm-6 game-btn" id="{{btn1}}" ng-click="click('btn1')">
+        <div class="col-sm-6 game-btn {{btnActive}}" id="{{btn1}}" ng-click="active && click('btn1')">
         </div>
-        <div class="col-sm-6 game-btn" id="{{btn2}}" ng-click="click('btn2')">
+        <div class="col-sm-6 game-btn {{btnActive}}" id="{{btn2}}" ng-click="active && click('btn2')">
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-6 game-btn" id="{{btn3}}" ng-click="click('btn3')">
+        <div class="col-sm-6 game-btn {{btnActive}}" id="{{btn3}}" ng-click="active && click('btn3')">
         </div>
-        <div class="col-sm-6 game-btn" id="{{btn4}}" ng-click="click('btn4')">
+        <div class="col-sm-6 game-btn {{btnActive}}" id="{{btn4}}" ng-click="active && click('btn4')">
         </div>
       </div>
 
