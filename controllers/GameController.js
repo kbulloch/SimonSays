@@ -9,11 +9,13 @@ simon.controller("GameCtrl", function($scope, $timeout) {
   var simon_pattern = [];
   $scope.fail = false;
   $scope.score = 0;
+  $scope.starting = true;
 
   $scope.start = function() {
     user_pattern = [];
     simon_pattern = [];
     $scope.fail = false;
+    $scope.starting = false;
     $scope.score = 0;
     addSimon();
     flashSimon();
@@ -36,6 +38,7 @@ simon.controller("GameCtrl", function($scope, $timeout) {
           user_pattern = [];
           simon_pattern = [];
           $scope.fail = true;
+          $scope.starting = true;
         }
 
       } else {

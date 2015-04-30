@@ -12,9 +12,31 @@ h3 {
   color: red;
 }
 
+#score {
+  position: relative;
+  right: 0;
+  text-algin: right;
+}
+
 .container {
   background: #404040;
-  margin: 30px;
+}
+
+.title {
+  text-align: right;
+  height: 60px;
+  width: 500px;
+}
+
+.game-box {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+.row {
+  margin: 0;
 }
 
 .game-btn {
@@ -26,6 +48,16 @@ h3 {
 
 .game-btn:active {
   border: 2px solid white;
+}
+
+.btn-start {
+  position: absolute;
+  font-size: 50px;
+  width: 500px;
+  height: 500px;
+  border-radius: 125px;
+  background: rgba(0,0,0,0.5);
+  z-index: 10;
 }
 
 #btn1 {

@@ -12,21 +12,30 @@
 </head>
 <body>
   <div class="container" ng-controller="GameCtrl">
-    <button class="btn btn-danger" ng-click="start()">START</button>
-    <h3>{{score}} rounds won</h3>
-    <h3 ng-show="fail" id="failtext">PATTERN FAIL, click start to reset</h3>
-    <div class="row">
-      <div class="col-sm-6 game-btn" id="{{btn1}}" ng-click="click('btn1')">
+
+
+    <div class="game-box">
+
+      <div class="title">
+        <h3 id="score">{{score}} rounds won</h3>
+        <h3 ng-show="fail" id="failtext">PATTERN FAIL, click start to reset</h3>
       </div>
-      <div class="col-sm-6 game-btn" id="{{btn2}}" ng-click="click('btn2')">
+
+      <button class="btn btn-start" ng-show="starting" ng-click="start()">START</button>
+      <div class="row">
+        <div class="col-sm-6 game-btn" id="{{btn1}}" ng-click="click('btn1')">
+        </div>
+        <div class="col-sm-6 game-btn" id="{{btn2}}" ng-click="click('btn2')">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 game-btn" id="{{btn3}}" ng-click="click('btn3')">
+        </div>
+        <div class="col-sm-6 game-btn" id="{{btn4}}" ng-click="click('btn4')">
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-6 game-btn" id="{{btn3}}" ng-click="click('btn3')">
-      </div>
-      <div class="col-sm-6 game-btn" id="{{btn4}}" ng-click="click('btn4')">
-      </div>
-    </div>
+
   </div>
 </body>
 </html>
