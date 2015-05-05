@@ -1,4 +1,4 @@
-simon.controller("GameCtrl", function($scope, $timeout) {
+  simon.controller("GameCtrl", function($scope, $timeout) {
 
   $scope.btn1 = "btn1";
   $scope.btn2 = "btn2";
@@ -12,7 +12,6 @@ simon.controller("GameCtrl", function($scope, $timeout) {
   $scope.starting = true;
   $scope.active = true;
   $scope.btnActive = "btn-active";
-
 
   $scope.start = function() {
     user_pattern = [];
